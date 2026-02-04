@@ -727,6 +727,78 @@
       line-height: 1.55;
     }
 
+    .capability-sub {
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       WHY VERIFICATION FAILS — Dark accent section
+       ============================================= */
+    .fails-section {
+      position: relative;
+    }
+
+    .fails-header {
+      margin-bottom: 56px;
+    }
+
+    .fails-title {
+      font-family: "Syne", sans-serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-top: 12px;
+    }
+
+    .fails-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .fails-item {
+      padding: 36px 32px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all 0.4s ease;
+    }
+    .fails-item:hover {
+      border-color: rgba(244, 184, 183, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .fails-bullet {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 12px rgba(244, 184, 183, 0.4);
+    }
+
+    .fails-text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 900px) {
+      .fails-list { grid-template-columns: 1fr; }
+    }
+
     /* =============================================
        APPLICATION AREAS — Dark section
        ============================================= */
@@ -816,6 +888,16 @@
       font-weight: 500;
       color: #ffffff;
       line-height: 1.5;
+    }
+
+    .application-desc {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      margin-top: 8px;
     }
 
     /* =============================================
@@ -1091,7 +1173,7 @@
       </div>
       <div class="fade-in-section" style="transition-delay: 0.3s">
         <p class="hero-subheadline">
-          We build AI-based infrastructure that verifies what actually happens in physical and operational environments — enabling measurable, enforceable outcomes across complex systems.
+          We build AI-based verification infrastructure that ensures decisions are made on verified reality — not assumptions, predictions, or self-reported data.
         </p>
       </div>
       <div class="fade-in-section" style="transition-delay: 0.45s">
@@ -1158,7 +1240,7 @@
             Our verification infrastructure sits between <span class="text-accent-pink-light">physical reality</span> and <span class="text-accent-pink-light">digital decision-making</span>.
           </p>
           <p class="build-text-secondary">
-            The system ingests real-world signals, applies artificial intelligence for verification and interpretation, and produces auditable system-level outputs designed for high-stakes environments — not dashboards, reports, or analytics layers.
+            The system ingests real-world signals, applies artificial intelligence for verification and interpretation, and produces auditable, system-level outputs designed for high-stakes environments — where dashboards and reports create false confidence.
           </p>
         </div>
       </div>
@@ -1214,6 +1296,7 @@
             </svg>
           </div>
           <p class="capability-text">Real-world signal ingestion and normalization</p>
+          <p class="capability-sub">No self-reported inputs</p>
         </div>
         <div class="fade-in-section capability-card" style="transition-delay: 0.2s">
           <div class="capability-icon">
@@ -1223,6 +1306,7 @@
             </svg>
           </div>
           <p class="capability-text">AI-based verification and system intelligence</p>
+          <p class="capability-sub">Anomalies surfaced, not smoothed</p>
         </div>
         <div class="fade-in-section capability-card" style="transition-delay: 0.3s">
           <div class="capability-icon">
@@ -1232,10 +1316,37 @@
             </svg>
           </div>
           <p class="capability-text">Infrastructure-grade auditability and traceability</p>
+          <p class="capability-sub">Defensible under scrutiny</p>
         </div>
       </div>
     </div>
     <div class="section-divider-light"></div>
+  </section>
+
+  <!-- Why Verification Fails Section — DARK -->
+  <section class="section-dark fails-section">
+    <div class="grain"></div>
+    <div class="container">
+      <div class="fails-header fade-in-section">
+        <span class="section-label-light">The Problem</span>
+        <h2 class="fails-title">Why verification fails today</h2>
+      </div>
+      <div class="fails-list">
+        <div class="fade-in-section fails-item" style="transition-delay: 0.1s">
+          <div class="fails-bullet"></div>
+          <p class="fails-text">Self-reported metrics that cannot be independently verified</p>
+        </div>
+        <div class="fade-in-section fails-item" style="transition-delay: 0.2s">
+          <div class="fails-bullet"></div>
+          <p class="fails-text">Sensor and AI systems that mask uncertainty instead of exposing it</p>
+        </div>
+        <div class="fade-in-section fails-item" style="transition-delay: 0.3s">
+          <div class="fails-bullet"></div>
+          <p class="fails-text">Decisions made on models disconnected from ground truth</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider-dark"></div>
   </section>
 
   <!-- Application Areas Section — DARK -->
@@ -1246,7 +1357,7 @@
     <div class="container">
       <div class="applications-header fade-in-section">
         <span class="section-label-light">Application Areas</span>
-        <h2 class="applications-title">Where verification matters most</h2>
+        <h2 class="applications-title">Where failure is expensive — and unverifiable data is dangerous</h2>
       </div>
       <div class="applications-grid">
         <div class="fade-in-section application-card" style="transition-delay: 0.1s">
@@ -1256,6 +1367,7 @@
             </svg>
           </div>
           <span class="application-text">Energy and climate systems</span>
+          <span class="application-desc">Where incentives, reporting, and real-world performance frequently diverge.</span>
         </div>
         <div class="fade-in-section application-card" style="transition-delay: 0.2s">
           <div class="application-icon">
@@ -1265,6 +1377,7 @@
             </svg>
           </div>
           <span class="application-text">Infrastructure and construction</span>
+          <span class="application-desc">Where decisions must be defensible years after they are made.</span>
         </div>
         <div class="fade-in-section application-card" style="transition-delay: 0.3s">
           <div class="application-icon">
@@ -1274,6 +1387,7 @@
             </svg>
           </div>
           <span class="application-text">Logistics and operational systems</span>
+          <span class="application-desc">Where incomplete or unverifiable data creates cascading risk.</span>
         </div>
         <div class="fade-in-section application-card" style="transition-delay: 0.4s">
           <div class="application-icon">
@@ -1302,7 +1416,7 @@
         <div class="fade-in-section info-card info-card-teal" style="transition-delay: 0.15s">
           <h3 class="info-label">Status</h3>
           <p class="info-text">
-            InvisiGlobe is an early-stage infrastructure platform focused on research, pilots, and strategic partnerships.
+            InvisiGlobe is an early-stage infrastructure platform currently focused on research, pilots, and strategic deployments.
           </p>
         </div>
       </div>
@@ -1319,7 +1433,7 @@
           <span class="contact-label">Get in Touch</span>
           <h2 class="contact-title">Start a conversation</h2>
           <p class="contact-text">
-            For partnership inquiries, pilot discussions, or strategic conversations.
+            For operators, regulators, and system owners exploring verification-critical pilots.
           </p>
           <a href="mailto:contact@invisilead.ca" class="contact-link">
             contact@invisilead.ca
